@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: mart_travel_footprint
+    columns:
+      - name: match_id
+        tests:
+          - not_null
+          - unique
+      - name: city
+        tests:
+          - not_null
+
+  - name: mart_stadium_capacity
+    columns:
+      - name: stadium_name
+        tests:
+          - not_null
+          - unique
+      - name: stadium_capacity
+        tests:
+          - not_null
+
+  - name: mart_matches_by_region
+    columns:
+      - name: region
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              arguments:
+                values: ['West', 'Central', 'East']
