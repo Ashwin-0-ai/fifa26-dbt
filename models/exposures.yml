@@ -1,0 +1,13 @@
+version: 2
+
+exposures:
+  - name: fifa_26_tournament_dashboard
+    type: dashboard
+    owner: 
+      name: Ashwin
+      email: ashwin.m@admavin.com
+    depends_on:
+      - ref('mart_match_results')
+      - ref('mart_matches_by_region')
+      - ref('mart_stadium_capacity') 
+      - ref('mart_travel_footprint')  

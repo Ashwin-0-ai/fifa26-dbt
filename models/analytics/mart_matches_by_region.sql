@@ -19,11 +19,7 @@ joined AS (
 
 with_region AS (
          SELECT *,
-                CASE 
-                     WHEN stadium_longitude < -105 THEN 'West'
-            WHEN stadium_longitude BETWEEN -105 AND -90 THEN 'Central'
-            ELSE 'East'
-        END AS region
+                {{ get_region('stadium_longitude') }} AS region
     FROM joined
 )
 

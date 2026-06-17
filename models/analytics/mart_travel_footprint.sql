@@ -8,6 +8,7 @@ WITH matches AS (
 
 joined AS (
         SELECT 
+                {{ dbt_utils.generate_surrogate_key(['m.match_id', 'h.stadium_name']) }} AS unique_id,
                 m.match_id,
                 m.stage,
                 m.group_name,

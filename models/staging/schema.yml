@@ -1,0 +1,23 @@
+version: 2 
+
+models:
+  - name: stg_host_cities
+    description: "Staging model for FIFA 26 data for the host cities"
+    columns:
+      - name: host_city
+        description: "Name of the city where the stadium is present"
+      - name: host_country
+        description: "Name of the country where the stadium is present"
+      - name: stadium_name
+        description: "Name of the stadium where the game is played"
+
+  - name: stg_matches
+    description: "Staging model for FIFA 26 data for the matches"
+    columns:
+      - name: match_id
+        description: "Unique identifier for each match"
+      - name: stadium
+        description: "Name of the stadium where the game is played"
+      - name: loaded_at
+        description: "Timestamp when the data was loaded into the staging model"
+
